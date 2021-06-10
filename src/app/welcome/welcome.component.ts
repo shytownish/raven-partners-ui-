@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-welcome',
@@ -7,6 +8,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
   todo = [
     'Get to work',
     'Pick up groceries',
@@ -22,6 +24,9 @@ export class WelcomeComponent implements OnInit {
   done = [
 
   ];
+  dateEvents: string[] = [];
+
+
 
   constructor() { }
 
@@ -40,4 +45,7 @@ export class WelcomeComponent implements OnInit {
     }
   }
 
+  addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.dateEvents.push(`${type}: ${event.value}`);
+  }
 }

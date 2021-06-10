@@ -1,5 +1,18 @@
-<div fxLayout="column" fxLayoutAlign="center center">
 
+
+<mat-form-field appearance="fill">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate placeholder="Start date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+    <input matEndDate placeholder="End date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+
+
+<div fxLayout="column" fxLayoutAlign="center center">
   <div class="example-container">
   <h2>Please select the data that you would like in your report</h2>
     <div
@@ -25,12 +38,15 @@
       (cdkDropListDropped)="drop($event)">
       <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
     </div>
+
+    <div class="example-button-row" fxFlexAlign="flex-end" >
+      <button mat-raised-button color="primary">Primary</button>
+    </div>
+
   </div>
   <mat-divider></mat-divider>
 
-  <div class="example-button-row" fxFlexAlign="right" >
-    <button mat-raised-button color="primary">Primary</button>
-  </div>
+
   <mat-divider></mat-divider>
 </div>
 
