@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {NgForm} from "@angular/forms";
+import {DataListService} from "../data-list.service";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-welcome',
@@ -26,10 +28,14 @@ export class WelcomeComponent implements OnInit {
 
   ];
   dateEvents: string[] = [];
+  display:boolean;
 
 
+  constructor(private datalist: DataListService, private http: HttpClient) {
+    this.todo = datalist.getList();
+    this.display = false;
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }
@@ -51,7 +57,12 @@ export class WelcomeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-      form.value.email;
-      form.value.password;
+
+     console.log(form.value.password);
+
+    this.http.get("").subscribe(response=>{
+      console.log(response)
+    })
+    this.display= true;
   }
 }

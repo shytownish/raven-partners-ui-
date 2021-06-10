@@ -18,6 +18,9 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { AuthService } from './auth/auth.service';
 import {PastTrainingComponent} from "./training/past-training/past-training.component";
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {DataListService} from "./data-list.service";
+import {HttpClientModule} from "@angular/common/http";
+import { DisplayComponent } from './welcome/display/display.component';
 
 
 @NgModule({
@@ -32,6 +35,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
     WelcomeComponent,
     HeaderComponent,
     SidenavListComponent,
+    DisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,9 +44,10 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, DataListService],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent]
 })
