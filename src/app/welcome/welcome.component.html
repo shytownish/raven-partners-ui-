@@ -1,43 +1,38 @@
-<div class="welcome" fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px" fxLayoutAlign="center center">
-  <section>
-    <h1>ACTIVITY</h1>
-    <p>Stay active and enjoy better health and more fun!</p>
-  </section>
-  <section>
-    <h1>COMMUNITY</h1>
-    <p>Get to know other people who share your passion!</p>
-  </section>
-  <section>
-    <h1>CHALLENGES</h1>
-    <p>Never stop! Dive into new challenges every day</p>
-  </section>
-</div>
+<div fxLayout="column" fxLayoutAlign="center center">
 
-<div class="example-container">
-  <h2>To do</h2>
+  <div class="example-container">
+  <h2>Please select the data that you would like in your report</h2>
+    <div
+      cdkDropList cdkDropListOrientation="horizontal"
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
 
-  <div
-    cdkDropList
-    #todoList="cdkDropList"
-    [cdkDropListData]="todo"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+      <div class="example-box" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    </div>
   </div>
-</div>
 
-<div class="example-container">
-  <h2>Done</h2>
-
-  <div
-    cdkDropList
-    #doneList="cdkDropList"
-    [cdkDropListData]="done"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="example-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+  <div class="example-container">
+  <h2>Report</h2>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
   </div>
+  <mat-divider></mat-divider>
+
+  <div class="example-button-row" fxFlexAlign="right" >
+    <button mat-raised-button color="primary">Primary</button>
+  </div>
+  <mat-divider></mat-divider>
 </div>
+
+
 
