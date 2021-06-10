@@ -1,5 +1,13 @@
-<p>display works!</p>
 
 <ol *ngFor="let i of dataList">
   <li>{{i}}</li>
 </ol>
+
+<ol *ngFor="let i of objects">
+  Json
+<!--  <li>{{i.item}}</li>-->
+<!--  <ol *ngFor="let i of objects">-->
+<!--  </ol>-->
+  <li>{{i | json}}</li>
+</ol>
+

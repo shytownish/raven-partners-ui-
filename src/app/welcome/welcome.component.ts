@@ -4,6 +4,7 @@ import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {NgForm} from "@angular/forms";
 import {DataListService} from "../data-list.service";
 import {HttpClient} from "@angular/common/http";
+import {RowObject} from "./display/data";
 
 @Component({
   selector: 'app-welcome',
@@ -27,6 +28,33 @@ export class WelcomeComponent implements OnInit {
   done = [
 
   ];
+
+
+ rowsResult:RowObject[] = [
+
+   { items: [
+       {
+         display: 'TextToDisplay',
+         dataDisplay: "dataToDisplay"
+       },
+       {
+         display: 'TextToDisplay2',
+         dataDisplay: "dataToDisplay2"
+       }
+     ]},
+
+   { items: [
+     {
+     display: 'TextToDisplay',
+     dataDisplay: "dataToDisplay"
+   },
+     {
+       display: 'TextToDisplay2',
+       dataDisplay: "dataToDisplay2"
+     }]}
+
+ ];
+
   dateEvents: string[] = [];
   display:boolean;
 

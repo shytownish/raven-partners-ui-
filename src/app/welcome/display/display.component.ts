@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {RowObject} from "./data";
 
 @Component({
   selector: 'app-display',
@@ -8,6 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class DisplayComponent implements OnInit {
 
   @Input() dataList;
+  @Input() objects:RowObject[];
 
   constructor() { }
 
