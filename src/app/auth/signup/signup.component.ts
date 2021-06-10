@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 
 export class SignupComponent implements OnInit {
-  maxDate:any;
+  maxDate;
 
   constructor(private authService: AuthService) { }
 

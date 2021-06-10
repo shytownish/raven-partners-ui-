@@ -40,11 +40,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag
     AppRoutingModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule,
-    CdkDragDrop,
-    moveItemInArray,
-    transferArrayItem
-
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
