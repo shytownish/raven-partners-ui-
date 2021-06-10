@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {MatDatepickerInputEvent} from "@angular/material/datepicker";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-welcome',
@@ -47,5 +48,10 @@ export class WelcomeComponent implements OnInit {
 
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.dateEvents.push(`${type}: ${event.value}`);
+  }
+
+  onSubmit(form: NgForm) {
+      form.value.email;
+      form.value.password;
   }
 }

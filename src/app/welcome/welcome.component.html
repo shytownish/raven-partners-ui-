@@ -1,19 +1,33 @@
+<section class="signup-form">
+
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+  <!-- range -->
+    <mat-form-field>
+      <input type="text" matInput placeholder="Range" ngModel name="range" email required #rangeInput="ngModel">
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Should be at least 6 characters long.">
+      <input type="text" matInput placeholder="rangeEnd" ngModel name="range-end" required minlength="6" #rend="ngModel">
+    </mat-form-field>
+  <!-- end range -->
 
 
-<mat-form-field appearance="fill">
+  <!--  Calender -->
+  <mat-form-field appearance="fill">
   <mat-label>Enter a date range</mat-label>
   <mat-date-range-input [rangePicker]="picker">
-    <input matStartDate placeholder="Start date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
-    <input matEndDate placeholder="End date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+    <input matStartDate placeholder="Start date" ngModel name="start-date"(dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" #startDate="ngModel">
+    <input matEndDate placeholder="End date" ngModel  name="end-date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"  #endDate="ngModel">
 
   </mat-date-range-input>
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   <mat-date-range-picker #picker></mat-date-range-picker>
-</mat-form-field>
+  </mat-form-field>
+    <!-- End Calender -->
 
-
-<div fxLayout="column" fxLayoutAlign="center center">
-  <div class="example-container">
+  <div>
+    <div class="example-container">
   <h2>Please select the data that you would like in your report</h2>
     <div
       cdkDropList cdkDropListOrientation="horizontal"
@@ -44,11 +58,7 @@
     </div>
 
   </div>
-  <mat-divider></mat-divider>
+  </div>
 
-
-  <mat-divider></mat-divider>
-</div>
-
-
-
+  </form>
+</section>
