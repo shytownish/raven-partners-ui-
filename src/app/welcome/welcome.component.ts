@@ -14,15 +14,12 @@ import {RowObject} from "./display/data";
 export class WelcomeComponent implements OnInit {
 
   todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep',
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
+    'Pan',
+    'NetworkReferenceId',
+    'transanctionId',
+    'totalTransanctionAmount',
+    'IssuerAmount',
+    'AcquirerAmount'
   ];
 
   done = [
