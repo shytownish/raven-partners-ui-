@@ -7,7 +7,8 @@ export class DataListService{
     'transanctionId',
     'totalTransanctionAmount',
     'IssuerAmount',
-    'AcquirerAmount'
+    'AcquirerAmount',
+    'TransanctionDate'
   ];
 
   public getList():string[]{

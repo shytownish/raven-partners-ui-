@@ -5,6 +5,7 @@ import {NgForm} from "@angular/forms";
 import {DataListService} from "../data-list.service";
 import {HttpClient} from "@angular/common/http";
 import {RowObject} from "./display/data";
+import {Body, settlement} from "./body";
 
 @Component({
   selector: 'app-welcome',
@@ -12,6 +13,11 @@ import {RowObject} from "./display/data";
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+
+  startDate:string;
+  endDate:string;
+  merchNbr:string;
+  value = 'settlement';
 
   todo = [
     'Pan',
@@ -83,11 +89,44 @@ export class WelcomeComponent implements OnInit {
 
   onSubmit(form: NgForm) {
 
-     console.log(form.value.password);
+   this.startDate = form.value.enddate.toJSON()
+    this.endDate = form.value.startdate.toJSON()
 
-    this.http.get("").subscribe(response=>{
+    console.log(form.value);
+    console.log(JSON.stringify(this.getBody()));
+
+    this.http.post("", JSON.stringify(this.getBody())).subscribe(response=>{
       console.log(response)
     })
+
     this.display= true;
   }
+
+  getBody():Body{
+    let obj: Body;
+
+    let dates = {
+      start: this.startDate,
+      end: this.endDate
+    }
+
+    let  p =  {
+      settlement: dates
+    };
+
+    obj = {
+      order : this.done,
+      lifecycle: [ "settlement"],
+      scope: ["eventPayload", "eventHeader", "dictionary", "governingAgreement"],
+      userProfile : {
+        representing : {
+          issuers : [ "10000"],
+          acquirers: []
+        }
+      },
+      merchNbr : this.merchNbr,
+      period: p
+    }
+      return obj;
+    }
 }

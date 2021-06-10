@@ -4,11 +4,12 @@
 
   <!-- range -->
     <mat-form-field>
-      <input type="text" matInput placeholder="Merchant Number" ngModel name="range" email required #rangeInput="ngModel">
+      <input type="text" matInput placeholder="Merchant Number" ngModel name="merchantNumber"   #merchantNumber="ngModel">
     </mat-form-field>
 
     <mat-form-field hintLabel="">
-      <input type="text" matInput placeholder="settlement" ngModel name="range-end" required minlength="6" #rend="ngModel">
+      <input type="text" matInput placeholder="lifecycle"  [(ngModel)]="value" ngModel name="lifecycle"  minlength="6" #lifecycle="ngModel">
+
     </mat-form-field>
   <!-- end range -->
 
@@ -17,8 +18,8 @@
   <mat-form-field appearance="fill">
   <mat-label>Enter a date range</mat-label>
   <mat-date-range-input [rangePicker]="picker">
-    <input matStartDate placeholder="Start date" ngModel name="start-date"(dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" #startDate="ngModel">
-    <input matEndDate placeholder="End date" ngModel  name="end-date" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"  #endDate="ngModel">
+    <input matStartDate placeholder="Start date" ngModel name="startdate"(dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)" #startDate="ngModel">
+    <input matEndDate placeholder="End date" ngModel  name="enddate" (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)"  #endDate="ngModel">
 
   </mat-date-range-input>
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
