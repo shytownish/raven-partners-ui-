@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {RowObject} from "./data";
+import {Result} from "./data";
 
 @Component({
   selector: 'app-display',
@@ -9,7 +9,7 @@ import {RowObject} from "./data";
 export class DisplayComponent implements OnInit {
 
   @Input() dataList;
-  @Input() objects:RowObject[];
+  @Input() objects:Result[];
 
   constructor() { }
 
