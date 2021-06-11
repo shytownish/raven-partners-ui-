@@ -1,3 +1,7 @@
 table {
   width: 50%;
 }
+
+.vertical-gap {
+  margin: 40px;
+}

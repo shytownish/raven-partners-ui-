@@ -56,7 +56,9 @@
   margin-left: 8px;
   min-width: 120px;
 }
-
+.vertical-gap {
+  margin: 40px;
+}
 .example-button-row {
   display: table-cell;
   width: 490px;

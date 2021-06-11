@@ -1,15 +1,17 @@
+
+
 <section class="signup-form">
 
   <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px" #f="ngForm" (ngSubmit)="onSubmit(f)">
-     
+
+    <div fxLayout="row" class="vertical-gap" fxLayoutGap="60px">
   <!-- range -->
-    <mat-form-field fxLayoutGap="30px">
+    <mat-form-field fxLayoutGap="200px">
       <input type="text" matInput placeholder="Merchant Number" ngModel name="merchantNumber"   #merchantNumber="ngModel">
     </mat-form-field>
 
     <mat-form-field hintLabel="">
       <input type="text" matInput placeholder="lifecycle"  [(ngModel)]="value" ngModel name="lifecycle"  minlength="6" #lifecycle="ngModel">
-
     </mat-form-field>
   <!-- end range -->
 
@@ -25,7 +27,7 @@
   <mat-date-range-picker #picker></mat-date-range-picker>
   </mat-form-field>
     <!-- End Calender -->
-
+    </div>
   <div>
     <div class="example-container">
   <h2>Please select the data that you would like in your report</h2>
