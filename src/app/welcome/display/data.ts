@@ -17,3 +17,6 @@ export interface RowObject {
   items: Result[];
 }
 
+export interface Response{
+  data: Result[];
+}

@@ -4,7 +4,7 @@ import {MatDatepickerInputEvent} from "@angular/material/datepicker";
 import {NgForm} from "@angular/forms";
 import {DataListService} from "../data-list.service";
 import {HttpClient} from "@angular/common/http";
-import {Item, Result, RowObject} from "./display/data";
+import {Item, Response, Result, RowObject} from "./display/data";
 import {Body, settlement} from "./body";
 
 declare var DURL: any;
@@ -80,31 +80,30 @@ export class WelcomeComponent implements OnInit {
       this.endDate = "";
     }
 
-    console.log(JSON.stringify(this.getBody()));
-    console.log(DURL);
-    // this.http.post("", JSON.stringify(this.getBody())).subscribe(response=>{
-    //   console.log(response)
-    // })
-      this.rowsResult = [
-        {
-          Pan: "PanNumber",
-          networkReferenceId: "NetworkreferenceId",
-          transactionId: "transactionId",
-          totalTransanctionAmount: "totalTransanctionAmount",
-          issuerAmount: "issuer amount",
-          AcquirerAmount: "AcquirerAmount",
-          transactiondate: "transanctionDate"
-        },
-        {
-          Pan: "PanNumber2",
-          networkReferenceId: "NetworkreferenceId2",
-          transactionId: "transactionId2",
-          totalTransanctionAmount: "totalTransanctionAmount2",
-          issuerAmount: "issuer amount2",
-          AcquirerAmount: "AcquirerAmount2",
-          transactiondate: "transanctionDate2"
-        }
-      ]
+    this.http.post("", JSON.stringify(this.getBody())).subscribe(response=>{
+      console.log(JSON.stringify(response));
+      this.rowsResult = (response as any).data;
+    })
+      // this.rowsResult = [
+      //   {
+      //     Pan: "PanNumber",
+      //     networkReferenceId: "NetworkreferenceId",
+      //     transactionId: "transactionId",
+      //     totalTransanctionAmount: "totalTransanctionAmount",
+      //     issuerAmount: "issuer amount",
+      //     AcquirerAmount: "AcquirerAmount",
+      //     transactiondate: "transanctionDate"
+      //   },
+      //   {
+      //     Pan: "PanNumber2",
+      //     networkReferenceId: "NetworkreferenceId2",
+      //     transactionId: "transactionId2",
+      //     totalTransanctionAmount: "totalTransanctionAmount2",
+      //     issuerAmount: "issuer amount2",
+      //     AcquirerAmount: "AcquirerAmount2",
+      //     transactiondate: "transanctionDate2"
+      //   }
+      // ]
 
 
     this.display= true;
