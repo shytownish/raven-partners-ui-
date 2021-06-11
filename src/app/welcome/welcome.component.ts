@@ -7,11 +7,15 @@ import {HttpClient} from "@angular/common/http";
 import {Item, Result, RowObject} from "./display/data";
 import {Body, settlement} from "./body";
 
+declare var DURL: any;
+
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.css']
 })
+
+
 export class WelcomeComponent implements OnInit {
 
   startDate:string;
@@ -77,7 +81,7 @@ export class WelcomeComponent implements OnInit {
     }
 
     console.log(JSON.stringify(this.getBody()));
-
+    console.log(DURL);
     // this.http.post("", JSON.stringify(this.getBody())).subscribe(response=>{
     //   console.log(response)
     // })

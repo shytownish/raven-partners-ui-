@@ -29,7 +29,7 @@ export class DataListService{
       data: "AcquirerAmount"
     },
     {
-      display: "Transaction date",
+      display: "Transaction Date",
       data: "transactiondate"
     }
   ];

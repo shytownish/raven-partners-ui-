@@ -2,6 +2,10 @@ table {
   width: 50%;
 }
 
+.border-bottom{
+  border-bottom: 2px solid currentColor;
+}
+
 .vertical-gap {
   margin: 40px;
 }
