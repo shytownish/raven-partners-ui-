@@ -71,15 +71,18 @@ export class WelcomeComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    if(form.value.endDate){
-      this.startDate = form.value.enddate.toJSON()
-      this.endDate = form.value.startdate.toJSON()
+    if(form.value.enddate){
+      this.startDate = form.value.startdate.toJSON()
+      this.endDate = form.value.enddate.toJSON()
     }
     else{
       this.startDate = "";
       this.endDate = "";
     }
 
+    this.merchNbr = form.value.merchantNumber;
+
+    console.log(this.getBody());
     this.http.post("", JSON.stringify(this.getBody())).subscribe(response=>{
       console.log(JSON.stringify(response));
       this.rowsResult = (response as any).results;
