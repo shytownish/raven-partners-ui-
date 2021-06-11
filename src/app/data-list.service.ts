@@ -13,7 +13,7 @@ export class DataListService{
       data: 'networkReferenceId'
     },
     {
-      display: "Transanction Id",
+      display: "Transaction Id",
       data: "transactionId"
     },
     {
@@ -33,6 +33,19 @@ export class DataListService{
       data: "transactiondate"
     }
   ];
+
+  getNoTDisplayName(done:string[]):string[]{
+    let fo:string[] = [];
+
+    done.forEach((x)=>{
+      let i =  this.displayMap.find((y)=>{
+        return y.display === x;
+      })
+      fo.push(i.data);
+    })
+
+    return fo;
+  }
 
   public getList():Item[]{
     return this.displayMap;

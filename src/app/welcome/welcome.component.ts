@@ -23,8 +23,8 @@ export class WelcomeComponent implements OnInit {
   todo = [
     'Pan',
     'Network Reference Id',
-    'Transanction Id',
-    'Total Transanction Amount',
+    'Transaction Id',
+    'Total Transaction Amount',
     'Issuer Amount',
     'Acquirer Amount',
     "Transaction Date"
@@ -65,18 +65,7 @@ export class WelcomeComponent implements OnInit {
   addEvent(type: string, event: MatDatepickerInputEvent<Date>) {
     this.dateEvents.push(`${type}: ${event.value}`);
   }
-  getOrder():string[]{
-    let fo:string[] = [];
 
-    this.done.forEach((x)=>{
-     let i =  this.displayMap.find((y)=>{
-        return y.display === x;
-      })
-      fo.push(i.data);
-    })
-
-    return fo;
-  }
   onSubmit(form: NgForm) {
     if(form.value.endDate){
       this.startDate = form.value.enddate.toJSON()
@@ -131,7 +120,7 @@ export class WelcomeComponent implements OnInit {
     };
 
     obj = {
-      order : this.getOrder(),
+      order : this.datalist.getNoTDisplayName(this.done),
       lifecycle: [ "settlement"],
       scope: ["eventPayload", "eventHeader", "dictionary", "governingAgreement"],
       userProfile : {

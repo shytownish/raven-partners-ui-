@@ -1,9 +1,9 @@
 <section class="signup-form">
 
-  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
-
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+     
   <!-- range -->
-    <mat-form-field>
+    <mat-form-field fxLayoutGap="30px">
       <input type="text" matInput placeholder="Merchant Number" ngModel name="merchantNumber"   #merchantNumber="ngModel">
     </mat-form-field>
 
@@ -12,7 +12,6 @@
 
     </mat-form-field>
   <!-- end range -->
-
 
   <!--  Calender -->
   <mat-form-field appearance="fill">
@@ -64,8 +63,8 @@
   </form>
 </section>
 
-<app-display [dataList]="done"
-              [objects]="rowsResult"
+<app-display [displayedColumns]="done"
+              [dataObjects]="rowsResult"
              *ngIf="display">
 
 </app-display>

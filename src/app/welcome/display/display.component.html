@@ -1,13 +1,48 @@
+<!--<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">-->
 
-<ol *ngFor="let i of dataList">
-  <li>{{i}}</li>
-</ol>
+<!--  &lt;!&ndash;- Note that these columns can be defined in any order.-->
+<!--        The actual rendered columns are set as a property on the row definition" &ndash;&gt;-->
 
-<ol *ngFor="let i of objects">
-  Json
-<!--  <li>{{i.item}}</li>-->
-<!--  <ol *ngFor="let i of objects">-->
-<!--  </ol>-->
-  <li>{{i | json}}</li>
-</ol>
+<!--&lt;!&ndash;  &lt;!&ndash; Position Column &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <ng-container matColumnDef="position">&ndash;&gt;-->
+<!--&lt;!&ndash;    <th mat-header-cell *matHeaderCellDef> No. </th>&ndash;&gt;-->
+<!--&lt;!&ndash;    <td mat-cell *matCellDef="let element"> {{element.position}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;  </ng-container>&ndash;&gt;-->
 
+<!--&lt;!&ndash;  &lt;!&ndash; Name Column &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <ng-container matColumnDef="name">&ndash;&gt;-->
+<!--&lt;!&ndash;    <th mat-header-cell *matHeaderCellDef> Name </th>&ndash;&gt;-->
+<!--&lt;!&ndash;    <td mat-cell *matCellDef="let element"> {{element.name}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;  </ng-container>&ndash;&gt;-->
+
+<!--&lt;!&ndash;  &lt;!&ndash; Weight Column &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;  <ng-container matColumnDef="weight">&ndash;&gt;-->
+<!--&lt;!&ndash;    <th mat-header-cell *matHeaderCellDef> Weight </th>&ndash;&gt;-->
+<!--&lt;!&ndash;    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>&ndash;&gt;-->
+<!--&lt;!&ndash;  </ng-container>&ndash;&gt;-->
+
+<!--  &lt;!&ndash; Symbol Column &ndash;&gt;-->
+<!--  <ng-container matColumnDef="Pan">-->
+<!--    <th mat-header-cell *matHeaderCellDef> {{display[0]}}test </th>-->
+<!--    <td mat-cell *matCellDef="let element"> {{element.Pan}} </td>-->
+<!--  </ng-container>-->
+
+<!--  <tr mat-header-row *matHeaderRowDef="display"></tr>-->
+<!--  <tr mat-row *matRowDef="let row; columns: display;"></tr>-->
+<!--</table>-->
+
+<mat-card>
+  <div class="example-container mat-elevation-z8"  fxLayoutAlign="center">
+    <table mat-table #table [dataSource]="dataSource">
+
+      <!-- Generic column definition -->
+      <ng-container *ngFor="let column of display" [cdkColumnDef]="column">
+        <th mat-header-cell *cdkHeaderCellDef>{{ column }}</th>
+        <td md-cell *cdkCellDef="let row"> {{getLabel(column) | json }}    Test {{   row[getLabel(column)] }}</td>
+      </ng-container>
+
+      <tr mat-header-row *cdkHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *cdkRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</mat-card>
