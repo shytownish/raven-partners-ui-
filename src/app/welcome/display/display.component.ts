@@ -41,7 +41,9 @@ export class DisplayComponent implements OnInit {
       TotalTransanctionAmount: "totalTransanctionAmount",
       IssuerAmount: "issuer amount",
       AcquirerAmount: "AcquirerAmount",
-      TransactionDate: "transanctionDate"
+      TransactionDate: "transanctionDate",
+      EventType: "EventType"
+
     },
     {
       Pan: "PanNumber2",
@@ -50,7 +52,8 @@ export class DisplayComponent implements OnInit {
       TotalTransanctionAmount: "totalTransanctionAmount2",
       IssuerAmount: "issuer amount2",
       AcquirerAmount: "AcquirerAmount2",
-      Transactiondate: "transanctionDate2"
+      Transactiondate: "transanctionDate2",
+      EventType: "EventType2"
     }
   ]
 

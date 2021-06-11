@@ -31,7 +31,13 @@ export class DataListService{
     {
       display: "Transaction Date",
       data: "TransactionDate"
-    }
+    },
+    {
+      display: "EventType",
+      data: "EventType"
+    },
+
+
   ];
 
   getNoTDisplayName(done:string[]):string[]{

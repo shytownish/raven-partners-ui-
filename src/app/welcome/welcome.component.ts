@@ -31,7 +31,8 @@ export class WelcomeComponent implements OnInit {
     'Total Transaction Amount',
     'Issuer Amount',
     'Acquirer Amount',
-    "Transaction Date"
+    "Transaction Date",
+    "EventType"
   ];
 
   done = [

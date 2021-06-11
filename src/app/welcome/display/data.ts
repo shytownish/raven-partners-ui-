@@ -10,7 +10,8 @@ export interface Result {
   TotalTransanctionAmount?:string,
   IssuerAmount?:string
   AcquirerAmount?:string,
-  TransactionDate?:string
+  TransactionDate?:string,
+  EventType?:string
 }
 
 export interface RowObject {
