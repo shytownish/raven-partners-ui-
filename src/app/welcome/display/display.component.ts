@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Item, Result} from "./data";
 import {DataListService} from "../../data-list.service";
 import {MatTableDataSource} from "@angular/material/table";
@@ -29,7 +29,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.css']
 })
-export class DisplayComponent implements OnInit {
+export class DisplayComponent implements OnInit , OnChanges{
 
   // dataSource = ELEMENT_DATA;
 
@@ -78,6 +78,16 @@ export class DisplayComponent implements OnInit {
     this.display = this.displayedColumns;
     this.dataSource.data = this.rowsResult;
 
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!Array.isArray(this.dataObjects) || !this.dataObjects.length) {
+      this.dataSource.data = this.rowsResult;
+      // array does not exist, is not an array, or is empty
+      // ⇒ do not attempt to process array
+    }else {
+      this.dataSource.data = this.dataObjects;
+    }
   }
 
 }

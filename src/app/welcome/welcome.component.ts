@@ -91,21 +91,21 @@ export class WelcomeComponent implements OnInit {
       // this.rowsResult = [
       //   {
       //     Pan: "PanNumber",
-      //     networkReferenceId: "NetworkreferenceId",
-      //     transactionId: "transactionId",
-      //     totalTransanctionAmount: "totalTransanctionAmount",
-      //     issuerAmount: "issuer amount",
+      //     NetworkReferenceId: "NetworkreferenceId",
+      //     TransactionId: "transactionId",
+      //     TotalTransanctionAmount: "totalTransanctionAmount",
+      //     IssuerAmount: "issuer amount",
       //     AcquirerAmount: "AcquirerAmount",
-      //     transactiondate: "transanctionDate"
+      //     TransactionDate: "transanctionDate"
       //   },
       //   {
-      //     Pan: "PanNumber2",
-      //     networkReferenceId: "NetworkreferenceId2",
-      //     transactionId: "transactionId2",
-      //     totalTransanctionAmount: "totalTransanctionAmount2",
-      //     issuerAmount: "issuer amount2",
-      //     AcquirerAmount: "AcquirerAmount2",
-      //     transactiondate: "transanctionDate2"
+      //     Pan: "PanNumber",
+      //     NetworkReferenceId: "NetworkreferenceId",
+      //     TransactionId: "transactionId",
+      //     TotalTransanctionAmount: "totalTransanctionAmount",
+      //     IssuerAmount: "issuer amount",
+      //     AcquirerAmount: "AcquirerAmount",
+      //     TransactionDate: "transanctionDate"
       //   }
       // ]
 
