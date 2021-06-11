@@ -82,7 +82,7 @@ export class WelcomeComponent implements OnInit {
 
     this.http.post("", JSON.stringify(this.getBody())).subscribe(response=>{
       console.log(JSON.stringify(response));
-      this.rowsResult = (response as any).data;
+      this.rowsResult = (response as any).results;
     })
       // this.rowsResult = [
       //   {

@@ -36,21 +36,21 @@ export class DisplayComponent implements OnInit {
   rowsResult = [
     {
       Pan: "PanNumber",
-      networkReferenceId: "NetworkreferenceId",
-      transactionId: "transactionId",
-      totalTransanctionAmount: "totalTransanctionAmount",
-      issuerAmount: "issuer amount",
+      NetworkReferenceId: "NetworkreferenceId",
+      TransactionId: "transactionId",
+      TotalTransanctionAmount: "totalTransanctionAmount",
+      IssuerAmount: "issuer amount",
       AcquirerAmount: "AcquirerAmount",
-      transactiondate: "transanctionDate"
+      TransactionDate: "transanctionDate"
     },
     {
       Pan: "PanNumber2",
-      networkReferenceId: "NetworkreferenceId2",
-      transactionId: "transactionId2",
-      totalTransanctionAmount: "totalTransanctionAmount2",
-      issuerAmount: "issuer amount2",
+      NetworkReferenceId: "NetworkreferenceId2",
+      TransactionId: "transactionId2",
+      TotalTransanctionAmount: "totalTransanctionAmount2",
+      IssuerAmount: "issuer amount2",
       AcquirerAmount: "AcquirerAmount2",
-      transactiondate: "transanctionDate2"
+      Transactiondate: "transanctionDate2"
     }
   ]
 

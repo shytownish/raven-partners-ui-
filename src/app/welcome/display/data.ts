@@ -5,12 +5,12 @@ export interface Item {
 
 export interface Result {
   Pan?:string,
-  networkReferenceId?:string,
-  transactionId?:string,
-  totalTransanctionAmount?:string,
-  issuerAmount?:string
+  NetworkReferenceId?:string,
+  TransactionId?:string,
+  TotalTransanctionAmount?:string,
+  IssuerAmount?:string
   AcquirerAmount?:string,
-  transactiondate?:string
+  TransactionDate?:string
 }
 
 export interface RowObject {

@@ -10,19 +10,19 @@ export class DataListService{
     },
     {
       display: "Network Reference Id",
-      data: 'networkReferenceId'
+      data: 'NetworkReferenceId'
     },
     {
       display: "Transaction Id",
-      data: "transactionId"
+      data: "TransactionId"
     },
     {
       display: "Total Transaction Amount",
-      data: 'totalTransanctionAmount',
+      data: 'TotalTransanctionAmount',
     },
     {
       display: "Issuer Amount",
-      data: "issuerAmount"
+      data: "IssuerAmount"
     },
     {
       display: "Acquirer Amount",
@@ -30,7 +30,7 @@ export class DataListService{
     },
     {
       display: "Transaction Date",
-      data: "transactiondate"
+      data: "TransactionDate"
     }
   ];
 
